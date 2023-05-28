@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/igorzheludkov/react-native-utility-hooks.git"
+    "url": "git+https://github.com/igorzheludkov/react-native-use-hooks.git"
   },
   "keywords": [
     "react native",
@@ -21,9 +21,9 @@
   "author": "Ihor Zheludkov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/igorzheludkov/react-native-utility-hooks/issues"
+    "url": "https://github.com/igorzheludkov/react-native-use-hooks/issues"
   },
-  "homepage": "https://github.com/igorzheludkov/react-native-utility-hooks#readme",
+  "homepage": "https://github.com/igorzheludkov/react-native-use-hooks#readme",
   "devDependencies": {
     "@babel/eslint-parser": "7.21.8",
     "@babel/preset-typescript": "^7.21.5",
