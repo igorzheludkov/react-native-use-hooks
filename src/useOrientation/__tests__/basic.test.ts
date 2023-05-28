@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { Dimensions, ScaledSize } from 'react-native';
-import useOrientation from './../useOrientation';
+import { useOrientation } from './../';
 
 jest.mock('react-native', () => ({
   Dimensions: {
@@ -24,13 +24,13 @@ describe('useOrientation', () => {
   });
 
   test('should return correct initial orientation', () => {
-    const initialWindow: ScaledSize = {
+    const initialScreen: ScaledSize = {
       width: 500,
       height: 800,
       scale: 2,
       fontScale: 2,
     };
-    (Dimensions.get as jest.MockedFunction<any>).mockReturnValue(initialWindow);
+    (Dimensions.get as jest.MockedFunction<any>).mockReturnValue({ screen: initialScreen });
 
     const { result, unmount } = renderHook(() => useOrientation());
 
@@ -38,20 +38,20 @@ describe('useOrientation', () => {
     unmount();
   });
 
-  test('should update orientation on window dimension change', () => {
-    const initialWindow: ScaledSize = {
+  test('should update orientation on screen dimension change', () => {
+    const initialScreen: ScaledSize = {
       width: 500,
       height: 800,
       scale: 2,
       fontScale: 2,
     };
-    (Dimensions.get as jest.MockedFunction<any>).mockReturnValue(initialWindow);
+    (Dimensions.get as jest.MockedFunction<any>).mockReturnValue({ screen: initialScreen });
 
     const { result, unmount } = renderHook(() => useOrientation());
 
     expect(result.current).toBe('portrait');
 
-    const updatedWindow: ScaledSize = {
+    const updatedScreen: ScaledSize = {
       width: 1000,
       height: 800,
       scale: 2,
@@ -59,8 +59,8 @@ describe('useOrientation', () => {
     };
     const handleOrientationChange = (Dimensions.addEventListener as jest.MockedFunction<any>).mock.calls[0][1];
 
-    (Dimensions.get as jest.MockedFunction<any>).mockReturnValue(updatedWindow);
-    handleOrientationChange({ window: updatedWindow, screen: updatedWindow });
+    (Dimensions.get as jest.MockedFunction<any>).mockReturnValue({ screen: updatedScreen });
+    handleOrientationChange({ window: updatedScreen, screen: updatedScreen });
 
     expect(result.current).toBe('landscape');
     unmount();
