@@ -17,11 +17,11 @@ It allows you to dynamically retrieve the current orientation of the device scre
 **Example**
 
     <View>
-       {orientation === 'landscape' ? (
-    	  <Text>This content is displayed only in landscape orientation.</Text>
-       ) : (
-           <Text>This content is displayed in portrait orientation.</Text>
-       )}
+      {orientation === 'landscape' ? (
+    	<Text>This content is displayed only in landscape orientation.</Text>
+      ) : (
+        <Text>This content is displayed in portrait orientation.</Text>
+      )}
     </View>
 
 ## getScaledSize function
@@ -35,12 +35,12 @@ The `getScaledSize` function is a utility function that calculates and returns a
 **And then use it in code or stylesheets**
 
     <Text style={{ fontSize: scale(20) }}>
-        This text will have a scaled font size of 20 units.
+      This text will have a scaled font size of 20 units.
     </Text>
 
 **Advanced usage**
 
-    const  scale  =  getScaledSize({size:  20,  factor:  0.5,  baseWidth:  400});
+    const scale = getScaledSize({size: 20, factor: 0.5, baseWidth: 400});
 
 In this example, the `getScaledSize` function is called with specific options provided as an argument. However, if the options parameter is not provided, the function will still work and use the default values for size, factor, and baseWidth.
 
@@ -61,8 +61,8 @@ This hook can be very suitable for displaying tooltips and toasts
 	const [status, trigger] = useTriggerTimer(5000);
 
 	return (
-		<>
-			<button onClick={trigger}>Trigger Timer</button>
-			{status ? <p>Timer is active.</p> : <p>Timer is inactive.</p>}
-		</>
+	 <>
+	   <button onClick={trigger}>Trigger Timer</button>
+	   {status ? <p>Timer is active.</p> : <p>Timer is inactive.</p>}
+	 </>
 	)
