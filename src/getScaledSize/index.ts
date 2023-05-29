@@ -1,6 +1,6 @@
 import {PixelRatio, Dimensions} from 'react-native';
 
-interface ScaledSizeOptions {
+export interface ScaledSizeOptions {
   size?: number;
   factor?: number;
   baseWidth?: number;
