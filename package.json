@@ -1,6 +1,6 @@
 {
   "name": "react-native-use-hooks",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A library of useful React Native hooks.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
